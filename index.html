@@ -1,57 +1,368 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Coffee Defense · Privacy Policy</title>
-<style>
-  :root { --bg: #fff8ee; --text: #3b2416; --muted: #7a5a44; --accent: #c9702a; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #201711; --text: #fff1d6; --muted: #d9c4a3; --accent: #f2a93b; } }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
-  h1 { color: var(--accent); margin-bottom: 4px; }
-  h2 { margin-top: 32px; }
-  .muted { color: var(--muted); }
-  a { color: var(--accent); }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Read the privacy policy for Coffee Defense on iPhone and iPad.">
+  <meta name="theme-color" content="#f7f0e5">
+  <link rel="icon" type="image/webp" href="coffee-defense-icon.webp">
+  <title>Coffee Defense · Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --canvas: #f7f0e5;
+      --paper: #fffaf2;
+      --ink: #302018;
+      --body-ink: #4d3d33;
+      --muted: #6b5546;
+      --accent: #86401f;
+      --line: #ddcebd;
+      --espresso: #29170f;
+      --serif: Georgia, "Times New Roman", serif;
+      --gutter: clamp(1rem, 4.3vw, 4rem);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: var(--accent); text-underline-offset: .22em; }
+    a:hover { color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    :target { scroll-margin-top: 1.25rem; }
+
+    .frame {
+      width: calc(100% - 2 * var(--gutter));
+      max-width: 74rem;
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      z-index: 2;
+      top: .75rem;
+      left: var(--gutter);
+      padding: .75rem 1rem;
+      background: var(--paper);
+      transform: translateY(-200%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 5rem;
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: 1rem;
+      font-weight: 750;
+      letter-spacing: -.02em;
+    }
+
+    .wordmark img { width: 2.375rem; border-radius: .6rem; }
+
+    .masthead > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+      font-size: .9375rem;
+      font-weight: 700;
+      text-decoration-color: #b08773;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      align-items: center;
+      min-height: clamp(20rem, 30vw, 24rem);
+      overflow: hidden;
+      border: 1px solid #543521;
+      border-radius: 1.2rem;
+      background: var(--espresso);
+      box-shadow: 0 16px 36px -24px #502d17aa;
+      color: #fff6e8;
+    }
+
+    .hero-copy {
+      width: fit-content;
+      max-width: 60%;
+      padding: clamp(1.6rem, 4.4vw, 3.9rem);
+    }
+
+    .hero-logo { width: clamp(9.5rem, 17vw, 13rem); }
+
+    .hero h1 {
+      margin: .9rem 0 .7rem;
+      font: 400 clamp(2.65rem, 5.2vw, 4.7rem)/1 var(--serif);
+      letter-spacing: -.065em;
+    }
+
+    .date { margin: 0; color: #ecd3bd; font-size: .9375rem; }
+
+    .hero-art {
+      position: absolute;
+      z-index: -1;
+      inset: 0 0 0 36%;
+      margin: 0;
+    }
+
+    .hero-art img { width: 100%; height: 100%; object-fit: cover; object-position: 54% 50%; }
+
+    .hero-art::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--espresso) 0%, #29170fd9 9%, #29170f2e 37%, transparent 62%);
+      content: "";
+    }
+
+    .policy-layout {
+      display: grid;
+      grid-template: "contents policy" auto "gameplay policy" 1fr / minmax(10.75rem, 14.25rem) minmax(0, 44rem);
+      align-items: start;
+      justify-content: center;
+      gap: 2rem clamp(2.5rem, 7vw, 6rem);
+      padding-block: clamp(2.5rem, 6vw, 4.75rem) clamp(3rem, 7vw, 6rem);
+    }
+
+    .contents { grid-area: contents; }
+
+    .contents h2 {
+      margin: 0 0 .75rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--line);
+      font-size: .9375rem;
+      font-weight: 750;
+      letter-spacing: .025em;
+    }
+
+    .contents ul { padding: 0; margin: 0; list-style: none; }
+
+    .contents a {
+      display: block;
+      padding-block: .4rem;
+      color: var(--muted);
+      font-size: .9375rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+
+    .contents a:hover, .contents a:focus-visible { color: var(--accent); text-decoration: underline; }
+
+    .gameplay { grid-area: gameplay; margin: 0; }
+
+    .gameplay img {
+      border: 1px solid var(--line);
+      border-radius: .7rem;
+      background: var(--paper);
+    }
+
+    .gameplay figcaption { margin-top: .65rem; color: var(--muted); font-size: .875rem; }
+
+    .policy {
+      grid-area: policy;
+      min-width: 0;
+      color: var(--body-ink);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    .policy .overview {
+      margin: 0 0 2.35rem;
+      padding: 1.3rem 1.55rem;
+      border: 1px solid var(--line);
+      border-inline-start: 4px solid #a7592e;
+      border-radius: .6rem;
+      background: var(--paper);
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    .policy strong { color: var(--ink); }
+    .policy p { margin: .6rem 0 0; }
+
+    .policy section {
+      margin-top: 1.9rem;
+      padding-top: 1.55rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .policy section:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+
+    .policy h2 {
+      margin: 0;
+      color: var(--ink);
+      font: 400 clamp(1.5rem, 3vw, 2.05rem)/1.18 var(--serif);
+      letter-spacing: -.035em;
+    }
+
+    .policy ul { margin: .75rem 0 0; padding-inline-start: 1.3rem; }
+    .policy li + li { margin-top: .55rem; }
+    .policy li::marker { color: var(--accent); }
+    .policy a { font-weight: 650; overflow-wrap: anywhere; }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 1.3rem 1.6rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9375rem;
+    }
+
+    .footer a { font-weight: 650; }
+
+    @media (max-width: 48rem) {
+      .masthead { min-height: 4.25rem; }
+      .hero { min-height: 0; }
+      .hero-copy { max-width: none; padding: 1.5rem clamp(1.3rem, 5vw, 2.5rem) 1.15rem; }
+      .hero h1 { margin-top: .6rem; letter-spacing: -.055em; }
+      .hero-logo { width: clamp(7rem, 21vw, 10rem); }
+
+      .hero-art {
+        position: relative;
+        inset: auto;
+        height: clamp(7.5rem, 42vw, 16rem);
+      }
+
+      .hero-art img { object-position: center 53%; }
+
+      .hero-art::after {
+        background: linear-gradient(180deg, var(--espresso), #29170f59 15%, transparent 35%);
+      }
+
+      .policy-layout {
+        grid-template: "contents" "policy" "gameplay" / minmax(0, 44rem);
+        row-gap: 1.4rem;
+        padding-top: 1.65rem;
+      }
+
+      .contents h2 { margin: 0 0 .25rem; padding: 0; border: 0; }
+      .contents ul { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+      .contents a { padding-block: .4rem; text-decoration: underline; text-decoration-color: #b8a08e; }
+      .contents li:nth-child(n+5):not(:last-child) { display: none; }
+      .policy .overview { padding: 1.05rem 1.15rem; margin-bottom: 1.6rem; }
+      .gameplay { max-width: 25rem; }
+    }
+
+    @media (max-width: 24rem) {
+      .hero h1 { font-size: 2.45rem; }
+      .hero-copy { padding-inline: 1rem; }
+    }
+  </style>
 </head>
-<body>
-<main>
-  <h1>Coffee Defense: Privacy Policy</h1>
-  <p class="muted">Last updated: 18 November 2026</p>
+<body id="top">
+  <a class="skip-link" href="#policy">Skip to the policy</a>
 
-  <p>Coffee Defense is a game for iPhone and iPad. This policy explains what happens to your information when you play it. The short version: <strong>we do not collect any personal data.</strong></p>
+  <header class="masthead frame">
+    <div class="wordmark">
+      <img src="coffee-defense-icon.webp" width="96" height="96" alt="">
+      <span>Coffee Defense</span>
+    </div>
+    <a href="#contact">Contact</a>
+  </header>
 
-  <h2>What data the app collects, how, and why</h2>
-  <p><strong>None.</strong> The game has no accounts, no sign-in, no advertising, no analytics and no tracking. It does not send gameplay or device data to us. Apple processes in-app purchases as described below.</p>
+  <main class="frame" id="policy" tabindex="-1">
+    <header class="hero">
+      <div class="hero-copy">
+        <img class="hero-logo" src="coffee-defense-logo.webp" width="540" height="289" alt="Coffee Defense game logo">
+        <h1>Privacy Policy</h1>
+        <p class="date">Last updated <time datetime="2026-11-18">18 November 2026</time></p>
+      </div>
+      <figure class="hero-art">
+        <img src="coffee-defense-cover.webp" width="1560" height="669" fetchpriority="high" alt="Coffee Defense characters gathering outside the café in a snowy village">
+      </figure>
+    </header>
 
-  <h2>What is stored on your device</h2>
-  <p>The game saves your progress (cleared stages, stars, coffee beans, unlocked heroes, Mastery levels and achievements) and preferences on your device.</p>
+    <div class="policy-layout">
+      <nav class="contents" aria-labelledby="contents-title">
+        <h2 id="contents-title">On this page</h2>
+        <ul>
+          <li><a href="#data-collection">Data collection</a></li>
+          <li><a href="#device-storage">Device storage</a></li>
+          <li><a href="#purchases">In-app purchases</a></li>
+          <li><a href="#retention">Retention and deletion</a></li>
+          <li><a href="#choices">Consent and choices</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#third-parties">Third parties</a></li>
+          <li><a href="#changes">Changes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-  <h2>In-app purchases</h2>
-  <p>Coffee Bean packs are sold through Apple's App Store. Apple processes the payment. We do not receive your payment details or Apple ID. The game uses App Store purchase details to add the beans you bought and keeps recent transaction IDs on your device to prevent duplicate delivery.</p>
+      <article class="policy" aria-label="Privacy policy details">
+        <p class="overview">Coffee Defense is a game for iPhone and iPad. This policy explains what happens to your information when you play it. <strong>We do not collect any personal data.</strong></p>
 
-  <h2>Data retention and deletion</h2>
-  <p>We do not receive or retain your game progress. You can clear game progress or remove the app's local data at any time:</p>
-  <ul>
-    <li>In the game: <strong>Settings → Reset progress</strong> clears game progress. The game keeps preferences and recent purchase transaction IDs.</li>
-    <li>On your device: deleting the app removes its local data, including saved preferences and transaction IDs.</li>
-  </ul>
+        <section id="data-collection">
+          <h2>What data the app collects, how, and why</h2>
+          <p><strong>None.</strong> The game has no accounts, no sign-in, no advertising, no analytics and no tracking. It does not send gameplay or device data to us. Apple processes in-app purchases as described below.</p>
+        </section>
 
-  <h2>Consent and your choices</h2>
-  <p>Because the game does not collect or process personal data, there is no consent to give or revoke. If you have a question or want to make a request about your data, email us at the address below and we will reply.</p>
+        <section id="device-storage">
+          <h2>What is stored on your device</h2>
+          <p>The game saves your progress (cleared stages, stars, coffee beans, unlocked heroes, Mastery levels and achievements) and preferences on your device.</p>
+        </section>
 
-  <h2>Children</h2>
-  <p>The game does not collect personal information from anyone, including children.</p>
+        <section id="purchases">
+          <h2>In-app purchases</h2>
+          <p>Coffee Bean packs are sold through Apple's App Store. Apple processes the payment. We do not receive your payment details or Apple ID. The game uses App Store purchase details to add the beans you bought and keeps recent transaction IDs on your device to prevent duplicate delivery.</p>
+        </section>
 
-  <h2>Third parties</h2>
-  <p>We do not share any user data with third parties: the game includes no third-party advertising, analytics, tracking or other data-collecting services. If that ever changes, any such third party will be required to provide the same or equal protection of user data as described in this policy, and this policy will be updated first. Payments for in-app purchases are processed by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+        <section id="retention">
+          <h2>Data retention and deletion</h2>
+          <p>We do not receive or retain your game progress. You can clear game progress or remove the app's local data at any time:</p>
+          <ul>
+            <li>In the game: <strong>Settings → Reset progress</strong> clears game progress. The game keeps preferences and recent purchase transaction IDs.</li>
+            <li>On your device: deleting the app removes its local data, including saved preferences and transaction IDs.</li>
+          </ul>
+        </section>
 
-  <h2>Changes</h2>
-  <p>If this policy changes, the new version will be posted on this page with a new date.</p>
+        <section id="choices">
+          <h2>Consent and your choices</h2>
+          <p>Because the game does not collect or process personal data, there is no consent to give or revoke. If you have a question or want to make a request about your data, email us at the address below and we will reply.</p>
+        </section>
 
-  <h2>Contact</h2>
-  <p>Questions? Email <a href="mailto:flybrewx@gmail.com">flybrewx@gmail.com</a>.</p>
-</main>
+        <section id="children">
+          <h2>Children</h2>
+          <p>The game does not collect personal information from anyone, including children.</p>
+        </section>
+
+        <section id="third-parties">
+          <h2>Third parties</h2>
+          <p>We do not share any user data with third parties: the game includes no third-party advertising, analytics, tracking or other data-collecting services. If that ever changes, any such third party will be required to provide the same or equal protection of user data as described in this policy, and this policy will be updated first. Payments for in-app purchases are processed by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+        </section>
+
+        <section id="changes">
+          <h2>Changes</h2>
+          <p>If this policy changes, the new version will be posted on this page with a new date.</p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Questions? Email <a href="mailto:flybrewx@gmail.com">flybrewx@gmail.com</a>.</p>
+        </section>
+      </article>
+
+      <figure class="gameplay">
+        <img src="coffee-defense-gameplay.webp" width="680" height="358" alt="Coffee heroes defending their café on a snowy Coffee Defense level" loading="lazy" decoding="async">
+        <figcaption>Coffee Defense gameplay</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <footer class="footer frame">
+    <span>Coffee Defense</span>
+    <a href="#top">Back to top</a>
+  </footer>
 </body>
 </html>
